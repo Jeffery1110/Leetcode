@@ -8,11 +8,15 @@ const isValid = function(str) {
     for(let item of str){
        if(item === '{' || item === '(' || item === '['){
           arr.push(item);
-       }else{
+       }
+       else{
            if(arr.pop() !== map[item] ){
               return false;
            }
        }
     }
-    return arr.length === 0;
+    if(arr.length == 0)
+        return true;
+    else 
+        return false
 };
